@@ -2,8 +2,8 @@
 
 ## Quick Start
 
-1. GitHub pe repo banao
-2. Files copy-paste karo
+1. GitHub 
+2. Files copy
 3. Install dependencies:
 ```bash
 npm install
