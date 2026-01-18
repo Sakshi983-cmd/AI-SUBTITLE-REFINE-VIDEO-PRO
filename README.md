@@ -82,7 +82,22 @@ git commit -m "README: fix image links and rename screenshots for clarity"
 git push origin main
 ```
 
-If you prefer not to rename, the README above already points to the exact filenames you uploaded so images will show as-is.
+
+## Project Flow — How It Works
+
+```mermaid
+flowchart TD
+    A[1. Video Input<br>Upload .mp4 / URL] --> B[2. Pre-processing<br>Audio Extract + Normalize<br>ffmpeg]
+    B --> C[3. Whisper Transcription<br>ASR → Raw Segments + Timestamps]
+    C --> D[4. NLP Baseline Fix<br>Punctuation, Capitalization<br>Basic Grammar + Merge/Split]
+    D --> E[5. LLM Smart Refinement<br>Remove fillers<br>Natural language, tone, emotion<br>Context aware rewriting]
+    E --> F[6. Timing Correction<br>Chars/sec limit<br>Read speed optimization<br>Final timestamp reflow]
+    F --> G[7. Quality Check<br>Confidence score<br>Readability metrics]
+    G --> H[8. Export<br>Final .srt / .vtt<br>Burnt-in option<br>Download / API response]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style E fill:#bbf,stroke:#333,stroke-width:3px,color:#000
+    style H fill:#dfd,stroke:#333,stroke-width:2px
 
 If you want, I can:
 - Create a commit/PR that updates README.md and renames the files for you, or
