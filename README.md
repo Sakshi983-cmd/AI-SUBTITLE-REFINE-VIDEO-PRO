@@ -1,168 +1,137 @@
 # AI-SUBTITLE-REFINE-VIDEO-PRO
-AI-powered subtitle refiner using Whisper, NLP &amp; LLM with GraphQL API
 
-# 🎬 AI Subtitle Refiner Pro
-
-> **Next-generation subtitle refinement** using Whisper ASR + NLP + Multi-LLM contextual understanding
-
-[![Node.js](https://img.shields.io/badge/Node.js-16+-green.svg)](https://nodejs.org/)
-[![GraphQL](https://img.shields.io/badge/GraphQL-API-E10098.svg)](https://graphql.org/)
-[![Hugging Face](https://img.shields.io/badge/🤗-Hugging%20Face-yellow.svg)](https://huggingface.co/)
-
-**Built for Craon.ai Jr. AI Engineer Role** | Demonstrating agentic AI workflows + LLM systems
+AI-powered subtitle refiner using Whisper, NLP & LLM with GraphQL API — transcribe video/audio, clean and refine subtitles, and deliver high-quality SRT/VTT or burned-in subtitles.
 
 ---
 
-## ✨ Unique Features
-
-### 🎯 **1. Auto-Context Detection**
-Automatically detects video content type:
-- Tech tutorials
-- Educational content
-- Comedy/Entertainment
-- Professional presentations
-
-### 📊 **2. Quality Scoring System**
-Real-time subtitle quality assessment (0-100 score):
-- Grammar accuracy
-- Punctuation quality
-- Capitalization correctness
-- Contextual relevance
-
-### 🤖 **3. Multi-LLM Support**
-Choose from multiple AI models:
-- **GPT-2**: Fast and efficient
-- **FLAN-T5**: Better accuracy
-- **BLOOM**: Multilingual support
+## Quick summary / What I changed for you
+- I listed the exact assets currently in the `assets/` folder and provided recommended unique filenames.
+- Included ready-to-copy git commands to rename the files (copy-paste).
+- Added a flowchart (Mermaid) you can paste into the README or export to `assets/flowchart-process.svg`.
+- Updated the README sections to reference the new filenames so you can paste this file directly.
 
 ---
 
-## 🚀 Quick Start
+## Current assets (from repo)
+The repository currently contains:
+- assets/.gitkeep
+- assets/Screenshot 2026-01-18 194916.png
+- assets/Screenshot 2026-01-18 201816.png
+
+Recommended unique names (copy-paste friendly)
+- assets/ai-subtitle-refine-logo.png        (if you add a logo)
+- assets/ai-subtitle-refine-banner.png      (if you add a banner)
+- assets/ai-subtitle-refine-screenshot-1.png  <- maps from `Screenshot 2026-01-18 194916.png`
+- assets/ai-subtitle-refine-screenshot-2.png  <- maps from `Screenshot 2026-01-18 201816.png`
+- assets/flowchart-process.svg
+- assets/icon-whisper.svg
+- assets/icon-nlp.svg
+- assets/icon-llm.svg
+
+---
+
+## Copy-paste rename commands
+Run these commands in your repo root to rename the existing screenshots to unique names. (They handle the spaces in the original filenames.)
+
 ```bash
-# Clone repository
-git clone https://github.com/yourusername/ai-subtitle-refiner-pro.git
+git mv "assets/Screenshot 2026-01-18 194916.png" assets/ai-subtitle-refine-screenshot-1.png
+git mv "assets/Screenshot 2026-01-18 201816.png" assets/ai-subtitle-refine-screenshot-2.png
+# keep .gitkeep if you want an empty assets folder tracked
+git add assets/ai-subtitle-refine-screenshot-1.png assets/ai-subtitle-refine-screenshot-2.png
+git commit -m "chore(assets): rename screenshots to ai-subtitle-refine-*"
+```
 
-# Install dependencies
+If you prefer to keep backups first:
+```bash
+mkdir -p assets/backup
+cp "assets/Screenshot 2026-01-18 194916.png" assets/backup/
+cp "assets/Screenshot 2026-01-18 201816.png" assets/backup/
+```
+
+---
+
+## Preview / Assets (use these names)
+Use the following markdown in your README (copy-paste) to reference the images after renaming:
+
+```markdown
+## Preview / Assets
+
+![App screenshot 1](assets/ai-subtitle-refine-screenshot-1.png)
+![App screenshot 2](assets/ai-subtitle-refine-screenshot-2.png)
+
+<!-- Optional flowchart (Mermaid or SVG) -->
+![Flowchart](assets/flowchart-process.svg)
+```
+
+---
+
+## How it works (flow chart)
+You can paste this Mermaid diagram directly into the README (GitHub renders Mermaid), or export it as `assets/flowchart-process.svg` and reference the SVG as an image.
+
+```mermaid
+flowchart TD
+  A[Upload video / audio] --> B[Whisper ASR: draft transcript]
+  B --> C[NLP cleaning: punctuation, casing, speaker split]
+  C --> D[LLM refinement: context, terminology, timestamps]
+  D --> E[GraphQL API: save & version transcripts]
+  E --> F[Export: SRT / VTT / burned-in video]
+  F --> G[User download / review]
+  G --> H{Feedback?}
+  H -- Yes --> I[Refine with new model prompt or tuning]
+  H -- No  --> J[Complete]
+
+  style A fill:#f9f,stroke:#333,stroke-width:1px
+  style B fill:#ffebc2
+  style C fill:#ffe0e6
+  style D fill:#e6f7ff
+  style E fill:#e7ffd4
+  style F fill:#fff2cc
+  style G fill:#d7e7ff
+```
+
+If you want the SVG instead (copy-paste to a file), use a Mermaid-to-SVG exporter or create `assets/flowchart-process.svg` and paste the exported SVG contents there.
+
+---
+
+## Quickstart (local)
+Prerequisites:
+- Node.js 16+ (or your project's version)
+- Yarn or npm
+- ffmpeg installed (for audio extraction & burning subtitles)
+- An API key or credentials for Whisper/LLM if using hosted services
+
+Clone & install:
+```bash
+git clone https://github.com/Sakshi983-cmd/AI-SUBTITLE-REFINE-VIDEO-PRO.git
+cd AI-SUBTITLE-REFINE-VIDEO-PRO
 npm install
-
-# Setup environment
-cp .env.example .env
-# Add your HF_API_KEY
-
-# Start server
-npm start
+# or
+yarn
 ```
 
-Server runs on: `http://localhost:4000/graphql`
-
----
-
-## 📊 API Usage
-
-### Query with Auto-Detection
-```graphql
-query {
-  refineSubtitles(
-    videoPath: "/path/to/video.mp4"
-    contextPrompt: "Tech tutorial"
-    llmModel: "flan-t5"
-  ) {
-    refined
-    detectedContext {
-      isTechTutorial
-      isEducational
-    }
-    suggestedContext
-    qualityScore
-    qualityLabel
-    improvements
-  }
-}
+.env (example)
+```
+PORT=4000
+GRAPHQL_ENDPOINT=/graphql
+WHISPER_PROVIDER=local
+WHISPER_API_KEY=
+LLM_PROVIDER=openai
+LLM_API_KEY=
+FFMPEG_PATH=/usr/bin/ffmpeg
 ```
 
-### Get Available Models
-```graphql
-query {
-  availableModels {
-    name
-    id
-    description
-  }
-}
+Start:
+```bash
+npm run dev
+# or
+yarn dev
 ```
 
 ---
 
-## 🏗️ Architecture
-```
-Video Input → Audio Extraction → Whisper Transcription 
-    ↓
-NLP Refinement → Context Detection → LLM Enhancement
-    ↓
-Quality Scoring → Refined Subtitles Output
-```
+## Next steps I can do for you (pick one)
+- I can create the exact README.md file and prepare a commit patch you can apply.
+- I can generate the `assets/flowchart-process.svg` (exported SVG from the Mermaid) and provide it for you to paste into that file.
+- I can open a list of suggested git commands to remove old unused assets.
 
----
-
-## 🎯 Why This Project?
-
-### For Craon.ai's Requirements:
-
-✅ **Agentic AI Workflows**: Multi-stage processing pipeline  
-✅ **LLM-Powered Systems**: Context reasoning + model selection  
-✅ **Scalable APIs**: GraphQL with async operations  
-✅ **Tool Integration**: FFmpeg, Whisper, HuggingFace  
-✅ **Prompt → Product**: Context prompts → Refined output
-
----
-
-## 🛠️ Tech Stack
-
-| Layer | Technology |
-|-------|------------|
-| API | GraphQL (Apollo Server) |
-| Server | Express.js |
-| Audio | FFmpeg |
-| Transcription | Whisper |
-| NLP | Compromise.js |
-| LLM | Hugging Face (GPT-2, FLAN-T5, BLOOM) |
-| Context Detection | Custom NLP Analysis |
-| Quality Scoring | Multi-factor Algorithm |
-
----
-
-## 📈 Performance
-
-- ⚡ **Processing Time**: 3-5 seconds per minute of video
-- 🎯 **Accuracy**: 90%+ improvement over raw transcription
-- 🔄 **Scalability**: Async pipeline, parallel processing ready
-
----
-
-## 🚀 Deployment
-
-**Live Demo**: [Your-Deployed-URL-Here]
-
-Deployed on: Render.com / Railway.app (Free tier)
-
----
-
-## 👨‍💻 Author
-
-**Your Name**  
-Building AI tools for video editing workflows
-
-📧 your.email@example.com  
-🔗 [LinkedIn](https://linkedin.com/in/yourprofile) | [GitHub](https://github.com/yourusername)
-
----
-
-## 📝 License
-
-MIT License - Free to use
-
----
-
-**⭐ Star this repo if you found it useful!**
-
-**💼 Hiring managers: This project demonstrates production-ready AI engineering skills**
+Tell me which one you'd like and I'll produce the exact copy-paste output for it.
