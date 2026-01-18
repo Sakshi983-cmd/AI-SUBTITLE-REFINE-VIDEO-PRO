@@ -1,60 +1,56 @@
-# AI-SUBTITLE-REFINE-VIDEO-PRO
+<div align="center">
+  <img src="assets/avatar.png" alt="AI Subtitle Refine Video Pro Logo" width="180" style="border-radius: 50%; margin-bottom: 20px;">
+  
+  # AI-SUBTITLE-REFINE-VIDEO-PRO 🚀
 
-AI-powered subtitle refiner using Whisper, NLP & LLM with GraphQL API.
+  **AI-Powered Subtitle Refinement Tool**  
+  Whisper + NLP + LLM + GraphQL API = Perfect, Natural & Professional Subtitles
 
----
+  Transform raw, robotic subtitles into **human-like, context-aware, emotionally intelligent** subtitles automatically!
 
-IMPORTANT — Follow exactly:
-- Keep these file names and paths exactly (case-sensitive):
-  - assets/flowchart.svg
-  - assets/screenshot.png
-  - assets/avatar.png
+</div>
 
-Do not rename or move them.
+<br>
 
----
+## 🔥 Why This Project is Special
+Most AI subtitle tools stop at transcription...  
+**We go 3 steps ahead**:
+- Whisper → Accurate transcription
+- NLP → Grammar, timing & readability fix
+- **LLM Magic** → Natural language, slang, emotions, context understanding, filler word removal
 
-## Flowchart (black)
-![Flowchart](assets/flowchart.svg)
+Result? Subtitles jo real insaan ne likhe lagein! 🔥
 
----
+## 🎯 Features
+- 🎤 **Whisper-based** high-accuracy speech-to-text
+- 🧠 **LLM-powered** smart refinement (better than basic spell-check!)
+- 🌐 **GraphQL API** – Easy integration with any frontend/app
+- ⏱️ Timing correction & sentence merging/splitting
+- 🌍 Multi-language support (extendable)
+- ⚡ Fast processing with clean output (.srt, .vtt, etc.)
 
-## Proof / Screenshot (KEEP THIS EXACT NAME: assets/screenshot.png)
-![Screenshot proof](assets/screenshot.png)
+## Project Flow
+Here's how the magic happens:
 
-(Upload your screenshot here as `assets/screenshot.png` so it shows in README as proof.)
+<div align="center">
+  <img src="assets/flowchart.svg" alt="Project Workflow Flowchart" width="750">
+  <br><br>
+  <em>Complete flow: Video → Whisper → Raw SRT → LLM Refinement → Perfect Subtitles</em>
+</div>
 
----
+## Real Result – Before vs After
 
-## Project avatar / logo (KEEP EXACT NAME: assets/avatar.png)
-![Avatar](assets/avatar.png)
+Here is an actual screenshot of refined subtitles in action:
 
-(Upload your avatar image here as `assets/avatar.png`.)
+<div align="center">
+  <img src="assets/screenshot.png" alt="Before vs After Subtitle Refinement Screenshot" width="850" style="border: 2px solid #333; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.3);">
+  <br><br>
+  <strong>See the difference yourself!</strong> Left = Raw Whisper output • Right = After our AI refinement
+</div>
 
----
+## 🚀 Quick Start
 
-## Quick checklist if images do NOT show
-1. Files are committed & pushed to the same branch shown on GitHub (usually `main`):
-   - git add assets/flowchart.svg assets/screenshot.png assets/avatar.png README.md
-   - git commit -m "Add README and assets (flowchart, screenshot, avatar)"
-   - git push origin main
-
-2. Case-sensitive path: `assets/flowchart.svg` (not `Assets` or `ASSETS`).
-
-3. Check raw URL in browser to confirm file exists:
-   - https://raw.githubusercontent.com/Sakshi983-cmd/AI-SUBTITLE-REFINE-VIDEO-PRO/main/assets/flowchart.svg
-   - https://raw.githubusercontent.com/Sakshi983-cmd/AI-SUBTITLE-REFINE-VIDEO-PRO/main/assets/screenshot.png
-   - https://raw.githubusercontent.com/Sakshi983-cmd/AI-SUBTITLE-REFINE-VIDEO-PRO/main/assets/avatar.png
-
-4. If any raw URL gives 404, the file is either not pushed or path/branch is wrong.
-
----
-
-## Git commands (exact)
-git add assets/flowchart.svg assets/screenshot.png assets/avatar.png README.md  
-git commit -m "Add README and assets (flowchart, screenshot, avatar)"  
-git push origin main
-
----
-
-Bas ab aap: 1) `assets/` folder mein yeh 3 files daalo (flowchart.svg maine neeche de di hai; screenshot & avatar aap apna upload karo) 2) commit & push 3) visit your repo README on GitHub — images should show. Agar phir bhi nahi aaye, mujhe batao exact error/404 URL main check kar dunga.
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/Sakshi983-cmd/AI-SUBTITLE-REFINE-VIDEO-PRO.git
+   cd AI-SUBTITLE-REFINE-VIDEO-PRO
